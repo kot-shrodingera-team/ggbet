@@ -26,7 +26,6 @@ const updateMaximumStake = async (): Promise<void> => {
       'Не найдена первая кнопка выбора максимальной ставки'
     );
   }
-  log('Пояилась кнопка первой максимальной ставки', 'cadetblue', true);
   const firstMaxBetButtonInitialValue =
     firstMaxBetButton.getAttribute('data-stake');
   log(
@@ -34,6 +33,7 @@ const updateMaximumStake = async (): Promise<void> => {
     'white',
     true
   );
+  log('Появилась кнопка первой максимальной ставки', 'cadetblue', true);
   const firstMaxBetButtonValueChanged = await awaiter(() => {
     return (
       firstMaxBetButtonInitialValue !==
@@ -54,7 +54,7 @@ const updateMaximumStake = async (): Promise<void> => {
   if (!maxBetButton) {
     throw new JsFailError('Не найдена кнопка выбора максимальной ставки');
   }
-  log('Пояилась кнопка максимальной ставки', 'cadetblue', true);
+  log('Появилась кнопка максимальной ставки', 'cadetblue', true);
   // console.log(maxBetButton);
   // (window as any).maxBetButton = maxBetButton;
   // const observer = new MutationObserver((mutations) => {
