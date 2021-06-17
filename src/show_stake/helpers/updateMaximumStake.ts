@@ -26,19 +26,16 @@ const updateMaximumStake = async (): Promise<void> => {
       'Не найдена первая кнопка выбора максимальной ставки'
     );
   }
-  const firstMaxBetButtonInitialValue =
-    firstMaxBetButton.getAttribute('data-stake');
-  log(
-    `firstMaxBetButtonInitialValue = ${firstMaxBetButtonInitialValue}`,
-    'white',
-    true
-  );
   log('Появилась кнопка первой максимальной ставки', 'cadetblue', true);
+  // const firstMaxBetButtonInitialValue =
+  //   firstMaxBetButton.getAttribute('data-stake');
+  // log(
+  //   `firstMaxBetButtonInitialValue = ${firstMaxBetButtonInitialValue}`,
+  //   'white',
+  //   true
+  // );
   const firstMaxBetButtonValueChanged = await awaiter(() => {
-    return (
-      firstMaxBetButtonInitialValue !==
-      firstMaxBetButton.getAttribute('data-stake')
-    );
+    return firstMaxBetButton.getAttribute('data-stake') !== '100';
   });
   if (!firstMaxBetButtonValueChanged) {
     throw new JsFailError('Сумма первой максимальнй ставки не поменялась');
