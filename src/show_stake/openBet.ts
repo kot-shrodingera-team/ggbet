@@ -33,9 +33,7 @@ const openBet = async (): Promise<void> => {
   /*                              Поиск маркета                               */
   /* ======================================================================== */
 
-  const markets = [
-    ...document.querySelectorAll('.__app-TableGroupMarket-table'),
-  ];
+  const markets = [...document.querySelectorAll('.__app-TableHeader-table')];
   if (!markets.length) {
     throw new JsFailError('Не найдено ни одного маркета');
   }
