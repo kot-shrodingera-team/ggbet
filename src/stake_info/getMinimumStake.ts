@@ -7,7 +7,7 @@ export const minimumStakeSelector = '';
 
 const minimumStakeOptions: StakeInfoValueOptions = {
   name: 'minimumStake',
-  fixedValue: () => 45.35,
+  fixedValue: () => 50,
   // valueFromText: {
   //   text: {
   //     // getText: () => '',
