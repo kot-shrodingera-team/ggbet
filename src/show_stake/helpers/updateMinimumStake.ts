@@ -10,7 +10,8 @@ const updateMinimumStake = async (): Promise<void> => {
   }
   log('Появилась ошибка минимальной ставки', 'cadetblue', true);
   const errorText = text(errorElement);
-  const minimumStakeRegex = /^Минимальная сумма: (\d+(?:\.\d+)?)$/i;
+  const minimumStakeRegex =
+    /^(?:Сумма минимальной ставки|Минимальная сумма): (\d+(?:\.\d+)?)$/i;
   const minimumStakeMatch = errorText.match(minimumStakeRegex);
   if (!minimumStakeMatch) {
     log(errorText, 'tomato');
