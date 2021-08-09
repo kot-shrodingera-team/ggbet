@@ -2,6 +2,7 @@ import {
   getElement,
   log,
   repeatingOpenBet,
+  ri,
 } from '@kot-shrodingera-team/germes-utils';
 import { JsFailError } from '@kot-shrodingera-team/germes-utils/errors';
 import { getReactInstance } from '@kot-shrodingera-team/germes-utils/reactUtils';
@@ -91,8 +92,8 @@ const openBet = async (): Promise<void> => {
       return null;
     }
     if (reactInstance) {
-      return (
-        reactInstance.return.return.memoizedProps.odd.name === targetBetName
+      return ri`${targetBetName}`.test(
+        reactInstance.return.return.memoizedProps.odd.name
       );
     }
     return false;
