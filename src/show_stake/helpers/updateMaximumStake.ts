@@ -19,7 +19,8 @@ const updateMaximumStake = async (): Promise<void> => {
   log('Фокусируемся на поле ввода суммы ставки', 'darksalmon', true);
   fireEvent(sumInput, 'focus');
   const firstMaxBetButton = await getElement(
-    '.__app-DropDown-stake-list > [data-stake]'
+    // '.__app-DropDown-stake-list > [data-stake]'
+    '.__app-StakeList-container > [data-stake]'
   );
   if (!firstMaxBetButton) {
     throw new JsFailError(
@@ -47,7 +48,7 @@ const updateMaximumStake = async (): Promise<void> => {
     'white',
     true
   );
-  const maxBetButton = await getElement('[class*="DropDown__bet-max___"]');
+  const maxBetButton = await getElement('[class*="stakeList__bet-max___"]');
   if (!maxBetButton) {
     throw new JsFailError('Не найдена кнопка выбора максимальной ставки');
   }
