@@ -92,7 +92,7 @@ const openBet = async (): Promise<void> => {
       return null;
     }
     if (reactInstance) {
-      return ri`${targetBetName}`.test(
+      return ri`^${targetBetName}$`.test(
         reactInstance.return.return.memoizedProps.odd.name
       );
     }
