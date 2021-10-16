@@ -33,7 +33,7 @@ const beforeSubmitCheck = async (): Promise<boolean> => {
 const authorize = authorizeGenerator({
   openForm: {
     selector: '.auth-bar__link',
-    openedSelector: '.popup-layout',
+    openedSelector: '.sign-in',
     // loopCount: 10,
     // triesInterval: 1000,
     // afterOpenDelay: 0,
@@ -41,7 +41,7 @@ const authorize = authorizeGenerator({
   // preInputCheck,
   loginInputSelector: 'input#_username',
   passwordInputSelector: 'input#_password',
-  submitButtonSelector: '.popup-layout form button.btn-success',
+  submitButtonSelector: '.sign-in form button[type="submit"]',
   // inputType: 'fireEvent',
   fireEventNames: ['input'],
   // beforeSubmitDelay: 0,
